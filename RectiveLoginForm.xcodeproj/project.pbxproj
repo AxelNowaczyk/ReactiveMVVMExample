@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		516F208F1F3B11530046CE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F208E1F3B11530046CE99 /* AppDelegate.swift */; };
+		516F20911F3B11530046CE99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20901F3B11530046CE99 /* ViewController.swift */; };
+		516F20941F3B11530046CE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 516F20921F3B11530046CE99 /* Main.storyboard */; };
+		516F20961F3B11530046CE99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516F20951F3B11530046CE99 /* Assets.xcassets */; };
+		516F20991F3B11530046CE99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 516F20971F3B11530046CE99 /* LaunchScreen.storyboard */; };
+		516F20A41F3B11530046CE99 /* RectiveLoginFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20A31F3B11530046CE99 /* RectiveLoginFormTests.swift */; };
+		516F20BB1F3B22580046CE99 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B71F3B1CDC0046CE99 /* ReactiveSwift.framework */; };
+		516F20BC1F3B22580046CE99 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B81F3B1CDC0046CE99 /* Result.framework */; };
+		516F20C31F3B240B0046CE99 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20C21F3B240B0046CE99 /* Helpers.swift */; };
+		516F20C71F3B24900046CE99 /* TestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20C61F3B24900046CE99 /* TestObserver.swift */; };
+		516F20D11F3B39750046CE99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20D01F3B39750046CE99 /* ViewModel.swift */; };
+		516F20D21F3B3EC90046CE99 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B71F3B1CDC0046CE99 /* ReactiveSwift.framework */; };
+		516F20D31F3B3EC90046CE99 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B81F3B1CDC0046CE99 /* Result.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		516F20A01F3B11530046CE99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 516F20831F3B11530046CE99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 516F208A1F3B11530046CE99;
+			remoteInfo = RectiveLoginForm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		516F208B1F3B11530046CE99 /* RectiveLoginForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RectiveLoginForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		516F208E1F3B11530046CE99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		516F20901F3B11530046CE99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		516F20931F3B11530046CE99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		516F20951F3B11530046CE99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		516F20981F3B11530046CE99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		516F209A1F3B11530046CE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		516F209F1F3B11530046CE99 /* RectiveLoginFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RectiveLoginFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		516F20A31F3B11530046CE99 /* RectiveLoginFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectiveLoginFormTests.swift; sourceTree = "<group>"; };
+		516F20A51F3B11530046CE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		516F20B71F3B1CDC0046CE99 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		516F20B81F3B1CDC0046CE99 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		516F20C21F3B240B0046CE99 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		516F20C61F3B24900046CE99 /* TestObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObserver.swift; sourceTree = "<group>"; };
+		516F20D01F3B39750046CE99 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		516F20881F3B11530046CE99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516F20BB1F3B22580046CE99 /* ReactiveSwift.framework in Frameworks */,
+				516F20BC1F3B22580046CE99 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		516F209C1F3B11530046CE99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516F20D21F3B3EC90046CE99 /* ReactiveSwift.framework in Frameworks */,
+				516F20D31F3B3EC90046CE99 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		516F20821F3B11530046CE99 = {
+			isa = PBXGroup;
+			children = (
+				516F208D1F3B11530046CE99 /* RectiveLoginForm */,
+				516F20A21F3B11530046CE99 /* RectiveLoginFormTests */,
+				516F208C1F3B11530046CE99 /* Products */,
+				516F20B01F3B1AE20046CE99 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		516F208C1F3B11530046CE99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				516F208B1F3B11530046CE99 /* RectiveLoginForm.app */,
+				516F209F1F3B11530046CE99 /* RectiveLoginFormTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		516F208D1F3B11530046CE99 /* RectiveLoginForm */ = {
+			isa = PBXGroup;
+			children = (
+				516F20D01F3B39750046CE99 /* ViewModel.swift */,
+				516F208E1F3B11530046CE99 /* AppDelegate.swift */,
+				516F20901F3B11530046CE99 /* ViewController.swift */,
+				516F20921F3B11530046CE99 /* Main.storyboard */,
+				516F20951F3B11530046CE99 /* Assets.xcassets */,
+				516F20971F3B11530046CE99 /* LaunchScreen.storyboard */,
+				516F209A1F3B11530046CE99 /* Info.plist */,
+				516F20C21F3B240B0046CE99 /* Helpers.swift */,
+			);
+			path = RectiveLoginForm;
+			sourceTree = "<group>";
+		};
+		516F20A21F3B11530046CE99 /* RectiveLoginFormTests */ = {
+			isa = PBXGroup;
+			children = (
+				516F20A31F3B11530046CE99 /* RectiveLoginFormTests.swift */,
+				516F20A51F3B11530046CE99 /* Info.plist */,
+				516F20C61F3B24900046CE99 /* TestObserver.swift */,
+			);
+			path = RectiveLoginFormTests;
+			sourceTree = "<group>";
+		};
+		516F20B01F3B1AE20046CE99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				516F20B71F3B1CDC0046CE99 /* ReactiveSwift.framework */,
+				516F20B81F3B1CDC0046CE99 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		516F208A1F3B11530046CE99 /* RectiveLoginForm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 516F20A81F3B11530046CE99 /* Build configuration list for PBXNativeTarget "RectiveLoginForm" */;
+			buildPhases = (
+				516F20871F3B11530046CE99 /* Sources */,
+				516F20881F3B11530046CE99 /* Frameworks */,
+				516F20891F3B11530046CE99 /* Resources */,
+				516F20C11F3B22B50046CE99 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RectiveLoginForm;
+			productName = RectiveLoginForm;
+			productReference = 516F208B1F3B11530046CE99 /* RectiveLoginForm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		516F209E1F3B11530046CE99 /* RectiveLoginFormTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 516F20AB1F3B11530046CE99 /* Build configuration list for PBXNativeTarget "RectiveLoginFormTests" */;
+			buildPhases = (
+				516F209B1F3B11530046CE99 /* Sources */,
+				516F209C1F3B11530046CE99 /* Frameworks */,
+				516F209D1F3B11530046CE99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				516F20A11F3B11530046CE99 /* PBXTargetDependency */,
+			);
+			name = RectiveLoginFormTests;
+			productName = RectiveLoginFormTests;
+			productReference = 516F209F1F3B11530046CE99 /* RectiveLoginFormTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		516F20831F3B11530046CE99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Nowaczyk Axel";
+				TargetAttributes = {
+					516F208A1F3B11530046CE99 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 98Y8TR257C;
+						ProvisioningStyle = Automatic;
+					};
+					516F209E1F3B11530046CE99 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 98Y8TR257C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 516F208A1F3B11530046CE99;
+					};
+				};
+			};
+			buildConfigurationList = 516F20861F3B11530046CE99 /* Build configuration list for PBXProject "RectiveLoginForm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 516F20821F3B11530046CE99;
+			productRefGroup = 516F208C1F3B11530046CE99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				516F208A1F3B11530046CE99 /* RectiveLoginForm */,
+				516F209E1F3B11530046CE99 /* RectiveLoginFormTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		516F20891F3B11530046CE99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516F20991F3B11530046CE99 /* LaunchScreen.storyboard in Resources */,
+				516F20961F3B11530046CE99 /* Assets.xcassets in Resources */,
+				516F20941F3B11530046CE99 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		516F209D1F3B11530046CE99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		516F20C11F3B22B50046CE99 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		516F20871F3B11530046CE99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516F20911F3B11530046CE99 /* ViewController.swift in Sources */,
+				516F20C31F3B240B0046CE99 /* Helpers.swift in Sources */,
+				516F20D11F3B39750046CE99 /* ViewModel.swift in Sources */,
+				516F208F1F3B11530046CE99 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		516F209B1F3B11530046CE99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516F20A41F3B11530046CE99 /* RectiveLoginFormTests.swift in Sources */,
+				516F20C71F3B24900046CE99 /* TestObserver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		516F20A11F3B11530046CE99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 516F208A1F3B11530046CE99 /* RectiveLoginForm */;
+			targetProxy = 516F20A01F3B11530046CE99 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		516F20921F3B11530046CE99 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				516F20931F3B11530046CE99 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		516F20971F3B11530046CE99 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				516F20981F3B11530046CE99 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		516F20A61F3B11530046CE99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		516F20A71F3B11530046CE99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		516F20A91F3B11530046CE99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 98Y8TR257C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RectiveLoginForm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelnowaczyk.RectiveLoginForm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		516F20AA1F3B11530046CE99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 98Y8TR257C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RectiveLoginForm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelnowaczyk.RectiveLoginForm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		516F20AC1F3B11530046CE99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 98Y8TR257C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RectiveLoginFormTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelnowaczyk.RectiveLoginFormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RectiveLoginForm.app/RectiveLoginForm";
+			};
+			name = Debug;
+		};
+		516F20AD1F3B11530046CE99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 98Y8TR257C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RectiveLoginFormTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelnowaczyk.RectiveLoginFormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RectiveLoginForm.app/RectiveLoginForm";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		516F20861F3B11530046CE99 /* Build configuration list for PBXProject "RectiveLoginForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				516F20A61F3B11530046CE99 /* Debug */,
+				516F20A71F3B11530046CE99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		516F20A81F3B11530046CE99 /* Build configuration list for PBXNativeTarget "RectiveLoginForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				516F20A91F3B11530046CE99 /* Debug */,
+				516F20AA1F3B11530046CE99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		516F20AB1F3B11530046CE99 /* Build configuration list for PBXNativeTarget "RectiveLoginFormTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				516F20AC1F3B11530046CE99 /* Debug */,
+				516F20AD1F3B11530046CE99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 516F20831F3B11530046CE99 /* Project object */;
+}

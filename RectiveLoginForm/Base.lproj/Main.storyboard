@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RectiveLoginForm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-ag-RuW">
+                                <rect key="frame" x="94" y="263" width="187.5" height="141.5"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VrS-2h-Flu">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="nameTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="BaV-Z4-Ws9"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9L-kW-DfK">
+                                        <rect key="frame" x="0.0" y="37" width="187.5" height="30.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="emailTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="98W-j0-aHO"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-dS-8c0">
+                                        <rect key="frame" x="0.0" y="74.5" width="187.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="passwordTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="MKs-yr-D6c"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-LP-9KM">
+                                        <rect key="frame" x="0.0" y="111.5" width="187.5" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4co-Sa-k3U"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VrS-2h-Flu" firstAttribute="width" secondItem="HcI-dS-8c0" secondAttribute="width" id="0qa-iu-caR"/>
+                                    <constraint firstItem="VrS-2h-Flu" firstAttribute="height" secondItem="Gzc-LP-9KM" secondAttribute="height" id="aOv-R5-v2m"/>
+                                    <constraint firstItem="VrS-2h-Flu" firstAttribute="width" secondItem="Gzc-LP-9KM" secondAttribute="width" id="eEI-1N-Kci"/>
+                                    <constraint firstItem="VrS-2h-Flu" firstAttribute="width" secondItem="J9L-kW-DfK" secondAttribute="width" id="fZl-zc-391"/>
+                                    <constraint firstItem="VrS-2h-Flu" firstAttribute="height" secondItem="HcI-dS-8c0" secondAttribute="height" id="jLR-sr-YLM"/>
+                                    <constraint firstItem="VrS-2h-Flu" firstAttribute="height" secondItem="J9L-kW-DfK" secondAttribute="height" id="kbe-rP-yzn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EsP-ag-RuW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="99U-37-Sqg"/>
+                            <constraint firstItem="Gzc-LP-9KM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Mbh-it-lcr"/>
+                            <constraint firstItem="EsP-ag-RuW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iI4-qP-YPS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="J9L-kW-DfK" id="vbn-z6-dlf"/>
+                        <outlet property="nameTextField" destination="VrS-2h-Flu" id="X7U-zY-gGe"/>
+                        <outlet property="passwordTextField" destination="HcI-dS-8c0" id="2nh-sK-RxW"/>
+                        <outlet property="submitButton" destination="Gzc-LP-9KM" id="h4f-bt-A91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
