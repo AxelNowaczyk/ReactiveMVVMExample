@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		516F208F1F3B11530046CE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F208E1F3B11530046CE99 /* AppDelegate.swift */; };
-		516F20911F3B11530046CE99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20901F3B11530046CE99 /* ViewController.swift */; };
+		516F20911F3B11530046CE99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20901F3B11530046CE99 /* LoginViewController.swift */; };
 		516F20941F3B11530046CE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 516F20921F3B11530046CE99 /* Main.storyboard */; };
 		516F20961F3B11530046CE99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516F20951F3B11530046CE99 /* Assets.xcassets */; };
 		516F20991F3B11530046CE99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 516F20971F3B11530046CE99 /* LaunchScreen.storyboard */; };
@@ -17,9 +17,11 @@
 		516F20BC1F3B22580046CE99 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B81F3B1CDC0046CE99 /* Result.framework */; };
 		516F20C31F3B240B0046CE99 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20C21F3B240B0046CE99 /* Helpers.swift */; };
 		516F20C71F3B24900046CE99 /* TestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20C61F3B24900046CE99 /* TestObserver.swift */; };
-		516F20D11F3B39750046CE99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20D01F3B39750046CE99 /* ViewModel.swift */; };
+		516F20D11F3B39750046CE99 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20D01F3B39750046CE99 /* LoginViewModel.swift */; };
 		516F20D21F3B3EC90046CE99 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B71F3B1CDC0046CE99 /* ReactiveSwift.framework */; };
 		516F20D31F3B3EC90046CE99 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B81F3B1CDC0046CE99 /* Result.framework */; };
+		51B755981F541641004196BC /* ContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755971F541641004196BC /* ContentTableViewController.swift */; };
+		51B7559E1F54238E004196BC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7559D1F54238E004196BC /* LoginRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +37,7 @@
 /* Begin PBXFileReference section */
 		516F208B1F3B11530046CE99 /* RectiveLoginForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RectiveLoginForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		516F208E1F3B11530046CE99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		516F20901F3B11530046CE99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		516F20901F3B11530046CE99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		516F20931F3B11530046CE99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		516F20951F3B11530046CE99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		516F20981F3B11530046CE99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,7 +49,9 @@
 		516F20B81F3B1CDC0046CE99 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		516F20C21F3B240B0046CE99 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		516F20C61F3B24900046CE99 /* TestObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObserver.swift; sourceTree = "<group>"; };
-		516F20D01F3B39750046CE99 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		516F20D01F3B39750046CE99 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		51B755971F541641004196BC /* ContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewController.swift; sourceTree = "<group>"; };
+		51B7559D1F54238E004196BC /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +98,9 @@
 		516F208D1F3B11530046CE99 /* RectiveLoginForm */ = {
 			isa = PBXGroup;
 			children = (
-				516F20D01F3B39750046CE99 /* ViewModel.swift */,
+				51B7559A1F541661004196BC /* Login */,
+				51B755991F54164B004196BC /* Content */,
 				516F208E1F3B11530046CE99 /* AppDelegate.swift */,
-				516F20901F3B11530046CE99 /* ViewController.swift */,
 				516F20921F3B11530046CE99 /* Main.storyboard */,
 				516F20951F3B11530046CE99 /* Assets.xcassets */,
 				516F20971F3B11530046CE99 /* LaunchScreen.storyboard */,
@@ -123,6 +127,24 @@
 				516F20B81F3B1CDC0046CE99 /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51B755991F54164B004196BC /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				51B755971F541641004196BC /* ContentTableViewController.swift */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
+		51B7559A1F541661004196BC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				516F20901F3B11530046CE99 /* LoginViewController.swift */,
+				516F20D01F3B39750046CE99 /* LoginViewModel.swift */,
+				51B7559D1F54238E004196BC /* LoginRouter.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,9 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				516F20911F3B11530046CE99 /* ViewController.swift in Sources */,
+				516F20911F3B11530046CE99 /* LoginViewController.swift in Sources */,
 				516F20C31F3B240B0046CE99 /* Helpers.swift in Sources */,
-				516F20D11F3B39750046CE99 /* ViewModel.swift in Sources */,
+				516F20D11F3B39750046CE99 /* LoginViewModel.swift in Sources */,
+				51B755981F541641004196BC /* ContentTableViewController.swift in Sources */,
+				51B7559E1F54238E004196BC /* LoginRouter.swift in Sources */,
 				516F208F1F3B11530046CE99 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +507,7 @@
 				516F20AA1F3B11530046CE99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		516F20AB1F3B11530046CE99 /* Build configuration list for PBXNativeTarget "RectiveLoginFormTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +516,7 @@
 				516F20AD1F3B11530046CE99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

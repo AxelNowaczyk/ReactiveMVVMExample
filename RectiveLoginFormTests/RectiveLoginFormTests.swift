@@ -12,7 +12,7 @@ import Result
 
 class RectiveLoginFormTests: XCTestCase {
 
-    let vm: ViewModelType = ViewModel()
+    let vm: LoginViewModelType = LoginViewModel()
     let alertMessage = TestObserver<String, NoError>()
     let submitButtonEnabled = TestObserver<Bool, NoError>()
 

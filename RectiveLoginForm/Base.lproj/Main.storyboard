@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mTO-bS-ZeQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RectiveLoginForm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RectiveLoginForm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -31,7 +31,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="nameTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="BaV-Z4-Ws9"/>
+                                            <action selector="nameTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="naa-pL-Sqx"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9L-kW-DfK">
@@ -40,7 +40,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="emailTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="98W-j0-aHO"/>
+                                            <action selector="emailTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="O0H-71-vQi"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-dS-8c0">
@@ -49,14 +49,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
-                                            <action selector="passwordTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="MKs-yr-D6c"/>
+                                            <action selector="passwordTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fvw-gI-m5F"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-LP-9KM">
                                         <rect key="frame" x="0.0" y="111.5" width="187.5" height="30"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
-                                            <action selector="submitButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4co-Sa-k3U"/>
+                                            <action selector="submitButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EPr-JN-KtC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -77,15 +77,64 @@
                             <constraint firstItem="EsP-ag-RuW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iI4-qP-YPS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qkn-cb-3CO"/>
                     <connections>
-                        <outlet property="emailTextField" destination="J9L-kW-DfK" id="vbn-z6-dlf"/>
-                        <outlet property="nameTextField" destination="VrS-2h-Flu" id="X7U-zY-gGe"/>
-                        <outlet property="passwordTextField" destination="HcI-dS-8c0" id="2nh-sK-RxW"/>
-                        <outlet property="submitButton" destination="Gzc-LP-9KM" id="h4f-bt-A91"/>
+                        <outlet property="emailTextField" destination="J9L-kW-DfK" id="nEe-T4-FGO"/>
+                        <outlet property="nameTextField" destination="VrS-2h-Flu" id="APW-MM-tZu"/>
+                        <outlet property="passwordTextField" destination="HcI-dS-8c0" id="Fgp-Za-DFp"/>
+                        <outlet property="submitButton" destination="Gzc-LP-9KM" id="OTL-1i-smS"/>
+                        <segue destination="DTP-hf-KGB" kind="show" identifier="ShowContent" id="zeZ-Db-K0N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="271" y="-143"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="kUK-7X-84s">
+            <objects>
+                <tableViewController id="DTP-hf-KGB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W9p-Ib-cSH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iwe-MR-qpP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iwe-MR-qpP" id="9Fh-6m-MdV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DTP-hf-KGB" id="2ox-jN-DkR"/>
+                            <outlet property="delegate" destination="DTP-hf-KGB" id="4l2-af-ISY"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aek-0d-gLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="-143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ksn-rS-lxu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mTO-bS-ZeQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="19s-sA-MBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FsY-tV-ebS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpf-ZL-wNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="-142.57871064467767"/>
         </scene>
     </scenes>
 </document>

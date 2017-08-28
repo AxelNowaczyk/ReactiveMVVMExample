@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  RectiveLoginForm
 //
 //  Created by Nowaczyk Axel on 09/08/2017.
@@ -9,9 +9,14 @@
 import UIKit
 import ReactiveSwift
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    let vm: ViewModelType = ViewModel()
+    let vm: LoginViewModelType = LoginViewModel()
+    let router = LoginRouter()
+
+    enum Route: String {
+        case showContent
+    }
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -34,18 +39,28 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension LoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.vm.outputs.alertMessage
             .observe(on: UIScheduler())
             .observeValues { [weak self] message in
-                let alert = UIAlertController(title: nil,
-                                              message: message,
-                                              preferredStyle: .alert)
-                alert.addAction(.init(title: "OK", style: .default, handler: nil))
-                self?.present(alert, animated: true, completion: nil)
+
+                guard let signUpMessage = LoginViewModel.SignUpMessageType(rawValue: message) else {
+                    return
+                }
+
+                switch signUpMessage {
+                case .successful:
+                    self?.router.route(to: Route.showContent.rawValue, from: self)
+                default:
+                    let alert = UIAlertController(title: nil,
+                                                  message: message,
+                                                  preferredStyle: .alert)
+                    alert.addAction(.init(title: "OK", style: .default, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
+                }
         }
 
         self.vm.outputs.submitButtonEnabled

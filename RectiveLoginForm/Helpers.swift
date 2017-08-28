@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Crudentials {
     static func isPresent(email: String?, name: String?, password: String?) -> Bool {
@@ -43,4 +44,8 @@ fileprivate extension String {
         let range = NSRange.init(location: 0, length: self.characters.count)
         return regex?.firstMatch(in: self, options: [], range: range) != nil
     }
+}
+
+protocol Router {
+    func route(to routeID: String, from context: UIViewController?)
 }

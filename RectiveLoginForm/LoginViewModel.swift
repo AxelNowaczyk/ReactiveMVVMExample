@@ -9,7 +9,7 @@
 import ReactiveSwift
 import Result
 
-protocol ViewModelInputs {
+protocol LoginViewModelInputs {
     func nameChanged(name: String?)
     func emailChanged(email: String?)
     func passwordChanged(password: String?)
@@ -17,17 +17,23 @@ protocol ViewModelInputs {
     func viewDidLoad()
 }
 
-protocol ViewModelOutputs {
+protocol LoginViewModelOutputs {
     var alertMessage: Signal<String, NoError> { get }
     var submitButtonEnabled: Signal<Bool, NoError> { get }
 }
 
-protocol ViewModelType {
-    var inputs: ViewModelInputs { get }
-    var outputs: ViewModelOutputs { get }
+protocol LoginViewModelType {
+    var inputs: LoginViewModelInputs { get }
+    var outputs: LoginViewModelOutputs { get }
 }
 
-class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
+class LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelOutputs {
+
+    enum SignUpMessageType: String {
+        case successful = "Successful"
+        case unsuccessful = "Unsuccessful"
+        case tooManyAttempts = "Too Many Attempts"
+    }
 
     init() {
 
@@ -40,7 +46,7 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
         let successfulSignupMessage = formData
             .sample(on: self.submitButtonPressedProperty.signal)
             .filter(Crudentials.isValid(email:name:password:))
-            .map { _ in "Successful" }
+            .map { _ in SignUpMessageType.successful.rawValue }
 
         let submittedFormDataInvalid = formData
             .sample(on: self.submitButtonPressedProperty.signal)
@@ -48,11 +54,11 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
 
         let unsuccessfulSignupMessage = submittedFormDataInvalid
             .take(first: 2)
-            .map { _ in "Unsuccessful" }
+            .map { _ in SignUpMessageType.unsuccessful.rawValue }
 
         let tooManyAttemptsMessage = submittedFormDataInvalid
             .skip(first: 2)
-            .map { _ in "Too Many Attempts" }
+            .map { _ in SignUpMessageType.tooManyAttempts.rawValue }
 
         self.alertMessage = Signal.merge(
             successfulSignupMessage,
@@ -96,6 +102,6 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
     let alertMessage: Signal<String, NoError>
     let submitButtonEnabled: Signal<Bool, NoError>
     
-    var inputs: ViewModelInputs { return self }
-    var outputs: ViewModelOutputs { return self }
+    var inputs: LoginViewModelInputs { return self }
+    var outputs: LoginViewModelOutputs { return self }
 }
