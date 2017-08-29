@@ -27,9 +27,9 @@ protocol LoginViewModelType {
     var outputs: LoginViewModelOutputs { get }
 }
 
-class LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelOutputs {
+struct LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelOutputs {
 
-    enum SignUpMessageType: String {
+    enum SignUpResponseType: String {
         case successful = "Successful"
         case unsuccessful = "Unsuccessful"
         case tooManyAttempts = "Too Many Attempts"
@@ -46,7 +46,7 @@ class LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelOu
         let successfulSignupMessage = formData
             .sample(on: self.submitButtonPressedProperty.signal)
             .filter(Crudentials.isValid(email:name:password:))
-            .map { _ in SignUpMessageType.successful.rawValue }
+            .map { _ in SignUpResponseType.successful.rawValue }
 
         let submittedFormDataInvalid = formData
             .sample(on: self.submitButtonPressedProperty.signal)
@@ -54,11 +54,11 @@ class LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelOu
 
         let unsuccessfulSignupMessage = submittedFormDataInvalid
             .take(first: 2)
-            .map { _ in SignUpMessageType.unsuccessful.rawValue }
+            .map { _ in SignUpResponseType.unsuccessful.rawValue }
 
         let tooManyAttemptsMessage = submittedFormDataInvalid
             .skip(first: 2)
-            .map { _ in SignUpMessageType.tooManyAttempts.rawValue }
+            .map { _ in SignUpResponseType.tooManyAttempts.rawValue }
 
         self.alertMessage = Signal.merge(
             successfulSignupMessage,

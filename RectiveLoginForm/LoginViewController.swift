@@ -47,7 +47,7 @@ extension LoginViewController {
             .observe(on: UIScheduler())
             .observeValues { [weak self] message in
 
-                guard let signUpMessage = LoginViewModel.SignUpMessageType(rawValue: message) else {
+                guard let signUpMessage = LoginViewModel.SignUpResponseType(rawValue: message) else {
                     return
                 }
 
