@@ -29,6 +29,37 @@ protocol LoginViewModelType {
 
 struct LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelOutputs {
 
+    let alertMessage: Signal<String, NoError>
+    let submitButtonEnabled: Signal<Bool, NoError>
+
+    var inputs: LoginViewModelInputs { return self }
+    var outputs: LoginViewModelOutputs { return self }
+
+    let nameChangedProperty = MutableProperty<String?>(nil)
+    func nameChanged(name: String?) {
+        self.nameChangedProperty.value = name
+    }
+
+    let emailChangedProperty = MutableProperty<String?>(nil)
+    func emailChanged(email: String?) {
+        self.emailChangedProperty.value = email
+    }
+
+    let passwordChangedProperty = MutableProperty<String?>(nil)
+    func passwordChanged(password: String?) {
+        self.passwordChangedProperty.value = password
+    }
+
+    let submitButtonPressedProperty = MutableProperty()
+    func submitButtonPressed() {
+        self.submitButtonPressedProperty.value = ()
+    }
+
+    let viewDidLoadProperty = MutableProperty()
+    func viewDidLoad() {
+        self.viewDidLoadProperty.value = ()
+    }
+
     enum SignUpResponseType: String {
         case successful = "Successful"
         case unsuccessful = "Unsuccessful"
@@ -73,35 +104,4 @@ struct LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelO
             )
             .take(until: tooManyAttemptsMessage.map { _ in () } )
     }
-
-    let nameChangedProperty = MutableProperty<String?>(nil)
-    func nameChanged(name: String?) {
-        self.nameChangedProperty.value = name
-    }
-
-    let emailChangedProperty = MutableProperty<String?>(nil)
-    func emailChanged(email: String?) {
-        self.emailChangedProperty.value = email
-    }
-
-    let passwordChangedProperty = MutableProperty<String?>(nil)
-    func passwordChanged(password: String?) {
-        self.passwordChangedProperty.value = password
-    }
-
-    let submitButtonPressedProperty = MutableProperty()
-    func submitButtonPressed() {
-        self.submitButtonPressedProperty.value = ()
-    }
-
-    let viewDidLoadProperty = MutableProperty()
-    func viewDidLoad() {
-        self.viewDidLoadProperty.value = ()
-    }
-    
-    let alertMessage: Signal<String, NoError>
-    let submitButtonEnabled: Signal<Bool, NoError>
-    
-    var inputs: LoginViewModelInputs { return self }
-    var outputs: LoginViewModelOutputs { return self }
 }

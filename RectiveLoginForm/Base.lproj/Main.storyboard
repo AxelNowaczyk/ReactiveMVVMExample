@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="nameTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="naa-pL-Sqx"/>
                                         </connections>
@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="37" width="187.5" height="30.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <action selector="emailTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="O0H-71-vQi"/>
                                         </connections>
@@ -47,7 +47,7 @@
                                         <rect key="frame" x="0.0" y="74.5" width="187.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="passwordTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fvw-gI-m5F"/>
                                         </connections>
@@ -90,21 +90,30 @@
             </objects>
             <point key="canvasLocation" x="271" y="-143"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Content Table View Controller-->
         <scene sceneID="kUK-7X-84s">
             <objects>
-                <tableViewController id="DTP-hf-KGB" sceneMemberID="viewController">
+                <tableViewController id="DTP-hf-KGB" customClass="ContentTableViewController" customModule="RectiveLoginForm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W9p-Ib-cSH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iwe-MR-qpP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasicCell" textLabel="RkF-HO-ghY" style="IBUITableViewCellStyleDefault" id="iwe-MR-qpP">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iwe-MR-qpP" id="9Fh-6m-MdV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RkF-HO-ghY">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

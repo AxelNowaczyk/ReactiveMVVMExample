@@ -22,6 +22,7 @@
 		516F20D31F3B3EC90046CE99 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B81F3B1CDC0046CE99 /* Result.framework */; };
 		51B755981F541641004196BC /* ContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755971F541641004196BC /* ContentTableViewController.swift */; };
 		51B7559E1F54238E004196BC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7559D1F54238E004196BC /* LoginRouter.swift */; };
+		51B755A01F556638004196BC /* ContentTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7559F1F556638004196BC /* ContentTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		516F20D01F3B39750046CE99 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		51B755971F541641004196BC /* ContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewController.swift; sourceTree = "<group>"; };
 		51B7559D1F54238E004196BC /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		51B7559F1F556638004196BC /* ContentTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				51B755971F541641004196BC /* ContentTableViewController.swift */,
+				51B7559F1F556638004196BC /* ContentTableViewModel.swift */,
 			);
 			name = Content;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				516F20D11F3B39750046CE99 /* LoginViewModel.swift in Sources */,
 				51B755981F541641004196BC /* ContentTableViewController.swift in Sources */,
 				51B7559E1F54238E004196BC /* LoginRouter.swift in Sources */,
+				51B755A01F556638004196BC /* ContentTableViewModel.swift in Sources */,
 				516F208F1F3B11530046CE99 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
