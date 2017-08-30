@@ -12,16 +12,14 @@ import ReactiveSwift
 class ContentTableViewController: UITableViewController {
 
     let vm: ContentTableViewModelType = ContentTableViewModel()
-    var titles: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.vm.outputs.receivedData
             .observe(on: UIScheduler())
-            .observeValues { [weak self] titles in
+            .observeValues { [weak self] _ in
 
-                self?.titles = titles 
                 self?.tableView.reloadData()
         }
 
@@ -34,13 +32,13 @@ class ContentTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return vm.outputs.contentCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
 
-        cell.textLabel?.text = titles[indexPath.row]
+        cell.textLabel?.text = vm.outputs.element(at: indexPath)?.title ?? "Unknown Title"
 
         return cell
     }

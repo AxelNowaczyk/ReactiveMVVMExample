@@ -15,7 +15,9 @@ protocol ContentTableViewModelInputs {
 }
 
 protocol ContentTableViewModelOutputs {
-    var receivedData: Signal<[String], NoError> { get }
+    var receivedData: Signal<Bool, NoError> { get }
+    var contentCount: Int { get }
+    func element(at index: IndexPath) -> ContentModel?
 }
 
 protocol ContentTableViewModelType {
@@ -23,15 +25,33 @@ protocol ContentTableViewModelType {
     var outputs: ContentTableViewModelOutputs { get }
 }
 
-struct ContentTableViewModel: ContentTableViewModelType, ContentTableViewModelInputs, ContentTableViewModelOutputs {
+class ContentTableViewModel: ContentTableViewModelType, ContentTableViewModelInputs, ContentTableViewModelOutputs {
 
-    let receivedData: Signal<[String], NoError>
+    private var contents: [ContentModel] = []
+    let receivedData: Signal<Bool, NoError>
 
     var inputs: ContentTableViewModelInputs { return self }
     var outputs: ContentTableViewModelOutputs { return self }
 
+    var contentCount: Int {
+        return contents.count
+    }
+
+    func element(at index: IndexPath) -> ContentModel? {
+        guard index.row < contentCount else { return nil }
+        return self.contents[index.row]
+    }
+
     let shouldReloadDataProperty = MutableProperty()
     func shouldReloadData() {
+        ContentProvider.performContentRequest(completionHandler: { response in
+            switch response {
+            case .success(let contents):
+                self.contents = contents
+            case .failure(let error):
+                print(error)
+            }
+        })
         self.shouldReloadDataProperty.value = ()
     }
 
@@ -42,15 +62,8 @@ struct ContentTableViewModel: ContentTableViewModelType, ContentTableViewModelIn
 
     init() {
         self.receivedData = Signal.merge(
-            self.viewDidLoadProperty.signal.map { _ in [] },
-            self.shouldReloadDataProperty.signal.map { _ in
-                switch arc4random() % 4 {
-                case 0: return ["1","2","3"]
-                case 1: return ["11","22","33"]
-                case 2: return ["12","23","34"]
-                default: return ["A","B","C"]
-                }
-            }
+            self.viewDidLoadProperty.signal.map { _ in false },
+            self.shouldReloadDataProperty.signal.map { _ in true }
         )
     }
 }

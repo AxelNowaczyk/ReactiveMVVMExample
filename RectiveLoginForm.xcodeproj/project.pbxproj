@@ -23,6 +23,8 @@
 		51B755981F541641004196BC /* ContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755971F541641004196BC /* ContentTableViewController.swift */; };
 		51B7559E1F54238E004196BC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7559D1F54238E004196BC /* LoginRouter.swift */; };
 		51B755A01F556638004196BC /* ContentTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7559F1F556638004196BC /* ContentTableViewModel.swift */; };
+		51B755A21F5582AB004196BC /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755A11F5582AB004196BC /* ContentModel.swift */; };
+		51B755A41F559290004196BC /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755A31F559290004196BC /* ContentProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		51B755971F541641004196BC /* ContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewController.swift; sourceTree = "<group>"; };
 		51B7559D1F54238E004196BC /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		51B7559F1F556638004196BC /* ContentTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewModel.swift; sourceTree = "<group>"; };
+		51B755A11F5582AB004196BC /* ContentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		51B755A31F559290004196BC /* ContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 			children = (
 				51B755971F541641004196BC /* ContentTableViewController.swift */,
 				51B7559F1F556638004196BC /* ContentTableViewModel.swift */,
+				51B755A11F5582AB004196BC /* ContentModel.swift */,
+				51B755A31F559290004196BC /* ContentProvider.swift */,
 			);
 			name = Content;
 			sourceTree = "<group>";
@@ -277,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				516F20911F3B11530046CE99 /* LoginViewController.swift in Sources */,
+				51B755A21F5582AB004196BC /* ContentModel.swift in Sources */,
 				516F20C31F3B240B0046CE99 /* Helpers.swift in Sources */,
+				51B755A41F559290004196BC /* ContentProvider.swift in Sources */,
 				516F20D11F3B39750046CE99 /* LoginViewModel.swift in Sources */,
 				51B755981F541641004196BC /* ContentTableViewController.swift in Sources */,
 				51B7559E1F54238E004196BC /* LoginRouter.swift in Sources */,
