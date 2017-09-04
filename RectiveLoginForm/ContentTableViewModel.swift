@@ -15,7 +15,7 @@ protocol ContentTableViewModelInputs {
 }
 
 protocol ContentTableViewModelOutputs {
-    var receivedData: Signal<Bool, NoError> { get }
+    var receivedData: Signal<String?, NoError> { get }
     var contentCount: Int { get }
     func element(at index: IndexPath) -> ContentModel?
 }
@@ -27,8 +27,9 @@ protocol ContentTableViewModelType {
 
 class ContentTableViewModel: ContentTableViewModelType, ContentTableViewModelInputs, ContentTableViewModelOutputs {
 
+    private let cp: ContentProvider
     private var contents: [ContentModel] = []
-    let receivedData: Signal<Bool, NoError>
+    let receivedData: Signal<String?, NoError>
 
     var inputs: ContentTableViewModelInputs { return self }
     var outputs: ContentTableViewModelOutputs { return self }
@@ -42,17 +43,17 @@ class ContentTableViewModel: ContentTableViewModelType, ContentTableViewModelInp
         return self.contents[index.row]
     }
 
-    let shouldReloadDataProperty = MutableProperty()
+    let shouldReloadDataProperty = MutableProperty<String?>(nil)
     func shouldReloadData() {
-        ContentProvider.performContentRequest(completionHandler: { response in
+        cp.performContentRequest(completionHandler: { response in
             switch response {
             case .success(let contents):
                 self.contents = contents
+                self.shouldReloadDataProperty.value = nil
             case .failure(let error):
-                print(error)
+                self.shouldReloadDataProperty.value = error.localizedDescription
             }
         })
-        self.shouldReloadDataProperty.value = ()
     }
 
     let viewDidLoadProperty = MutableProperty()
@@ -60,10 +61,12 @@ class ContentTableViewModel: ContentTableViewModelType, ContentTableViewModelInp
         self.viewDidLoadProperty.value = ()
     }
 
-    init() {
+    init(cp: ContentProvider) {
+        self.cp = cp
+
         self.receivedData = Signal.merge(
-            self.viewDidLoadProperty.signal.map { _ in false },
-            self.shouldReloadDataProperty.signal.map { _ in true }
+            self.viewDidLoadProperty.signal.map { _ in nil },
+            self.shouldReloadDataProperty.signal
         )
     }
 }

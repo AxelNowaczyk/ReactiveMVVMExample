@@ -10,7 +10,7 @@ import XCTest
 import Result
 @testable import RectiveLoginForm
 
-class RectiveLoginFormTests: XCTestCase {
+class LoginFormTests: XCTestCase {
 
     let vm: LoginViewModelType = LoginViewModel()
     let alertMessage = TestObserver<String, NoError>()
@@ -18,7 +18,7 @@ class RectiveLoginFormTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        self.vm.outputs.alertMessage.observe(self.alertMessage.observer)
+        self.vm.outputs.alertResponse.observe(self.alertMessage.observer)
         self.vm.outputs.submitButtonEnabled.observe(self.submitButtonEnabled.observer)
     }
 
@@ -26,13 +26,13 @@ class RectiveLoginFormTests: XCTestCase {
         self.vm.inputs.viewDidLoad()
         self.submitButtonEnabled.assertValues([false])
 
-        self.vm.inputs.nameChanged(name: "Chris")
+        self.vm.inputs.nameChanged(name: "Namme")
         self.submitButtonEnabled.assertValues([false])
 
-        self.vm.inputs.emailChanged(email: "chris@gmail.com")
+        self.vm.inputs.emailChanged(email: "corrrrect@password.com")
         self.submitButtonEnabled.assertValues([false])
 
-        self.vm.inputs.passwordChanged(password: "secret123")
+        self.vm.inputs.passwordChanged(password: "Strong123Password!")
         self.submitButtonEnabled.assertValues([false, true])
 
         self.vm.inputs.nameChanged(name: "")
@@ -41,9 +41,9 @@ class RectiveLoginFormTests: XCTestCase {
 
     func testSuccessfulSignup() {
         self.vm.inputs.viewDidLoad()
-        self.vm.inputs.nameChanged(name: "Lisa")
-        self.vm.inputs.emailChanged(email: "lisa@rules.com")
-        self.vm.inputs.passwordChanged(password: "password123")
+        self.vm.inputs.nameChanged(name: "Name")
+        self.vm.inputs.emailChanged(email: "correct@email.com")
+        self.vm.inputs.passwordChanged(password: "Password123!")
         self.vm.inputs.submitButtonPressed()
 
         self.alertMessage.assertValues(["Successful"])
@@ -51,9 +51,9 @@ class RectiveLoginFormTests: XCTestCase {
 
     func testUnsuccessfulSignup() {
         self.vm.inputs.viewDidLoad()
-        self.vm.inputs.nameChanged(name: "Lisa")
-        self.vm.inputs.emailChanged(email: "lisa@rules")
-        self.vm.inputs.passwordChanged(password: "password123")
+        self.vm.inputs.nameChanged(name: "Name")
+        self.vm.inputs.emailChanged(email: "wrong@email")
+        self.vm.inputs.passwordChanged(password: "Password123!")
         self.vm.inputs.submitButtonPressed()
 
         self.alertMessage.assertValues(["Unsuccessful"])
@@ -61,9 +61,9 @@ class RectiveLoginFormTests: XCTestCase {
 
     func testTooManyAttempts() {
         self.vm.inputs.viewDidLoad()
-        self.vm.inputs.nameChanged(name: "Lisa")
-        self.vm.inputs.emailChanged(email: "lisa@rules")
-        self.vm.inputs.passwordChanged(password: "password123")
+        self.vm.inputs.nameChanged(name: "Name")
+        self.vm.inputs.emailChanged(email: "wrong@mail")
+        self.vm.inputs.passwordChanged(password: "Password123!")
 
         self.vm.inputs.submitButtonPressed()
         self.vm.inputs.submitButtonPressed()
@@ -72,7 +72,7 @@ class RectiveLoginFormTests: XCTestCase {
         self.alertMessage.assertValues(["Unsuccessful", "Unsuccessful", "Too Many Attempts"])
         self.submitButtonEnabled.assertValues([false, true, false])
         
-        self.vm.inputs.emailChanged(email: "lisa@rules.com")
+        self.vm.inputs.emailChanged(email: "correct@mail")
         self.submitButtonEnabled.assertValues([false, true, false])
     }
     

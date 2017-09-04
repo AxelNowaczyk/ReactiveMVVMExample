@@ -12,7 +12,7 @@
 		516F20941F3B11530046CE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 516F20921F3B11530046CE99 /* Main.storyboard */; };
 		516F20961F3B11530046CE99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516F20951F3B11530046CE99 /* Assets.xcassets */; };
 		516F20991F3B11530046CE99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 516F20971F3B11530046CE99 /* LaunchScreen.storyboard */; };
-		516F20A41F3B11530046CE99 /* RectiveLoginFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20A31F3B11530046CE99 /* RectiveLoginFormTests.swift */; };
+		516F20A41F3B11530046CE99 /* LoginFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20A31F3B11530046CE99 /* LoginFormTests.swift */; };
 		516F20BB1F3B22580046CE99 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B71F3B1CDC0046CE99 /* ReactiveSwift.framework */; };
 		516F20BC1F3B22580046CE99 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F20B81F3B1CDC0046CE99 /* Result.framework */; };
 		516F20C31F3B240B0046CE99 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F20C21F3B240B0046CE99 /* Helpers.swift */; };
@@ -25,6 +25,7 @@
 		51B755A01F556638004196BC /* ContentTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7559F1F556638004196BC /* ContentTableViewModel.swift */; };
 		51B755A21F5582AB004196BC /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755A11F5582AB004196BC /* ContentModel.swift */; };
 		51B755A41F559290004196BC /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755A31F559290004196BC /* ContentProvider.swift */; };
+		51B755A61F5D516F004196BC /* ContentTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B755A51F5D516F004196BC /* ContentTableViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,7 @@
 		516F20981F3B11530046CE99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		516F209A1F3B11530046CE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		516F209F1F3B11530046CE99 /* RectiveLoginFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RectiveLoginFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		516F20A31F3B11530046CE99 /* RectiveLoginFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectiveLoginFormTests.swift; sourceTree = "<group>"; };
+		516F20A31F3B11530046CE99 /* LoginFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormTests.swift; sourceTree = "<group>"; };
 		516F20A51F3B11530046CE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		516F20B71F3B1CDC0046CE99 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		516F20B81F3B1CDC0046CE99 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		51B7559F1F556638004196BC /* ContentTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewModel.swift; sourceTree = "<group>"; };
 		51B755A11F5582AB004196BC /* ContentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		51B755A31F559290004196BC /* ContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
+		51B755A51F5D516F004196BC /* ContentTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTableViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,8 @@
 		516F20A21F3B11530046CE99 /* RectiveLoginFormTests */ = {
 			isa = PBXGroup;
 			children = (
-				516F20A31F3B11530046CE99 /* RectiveLoginFormTests.swift */,
+				516F20A31F3B11530046CE99 /* LoginFormTests.swift */,
+				51B755A51F5D516F004196BC /* ContentTableViewTests.swift */,
 				516F20A51F3B11530046CE99 /* Info.plist */,
 				516F20C61F3B24900046CE99 /* TestObserver.swift */,
 			);
@@ -298,8 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				516F20A41F3B11530046CE99 /* RectiveLoginFormTests.swift in Sources */,
+				516F20A41F3B11530046CE99 /* LoginFormTests.swift in Sources */,
 				516F20C71F3B24900046CE99 /* TestObserver.swift in Sources */,
+				51B755A61F5D516F004196BC /* ContentTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

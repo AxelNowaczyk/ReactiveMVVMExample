@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
 
-
     @IBAction func nameTextFieldChanged(_ sender: UITextField) {
         self.vm.inputs.nameChanged(name: self.nameTextField.text)
     }
@@ -43,22 +42,27 @@ extension LoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.vm.outputs.alertMessage
-            .observe(on: UIScheduler())
-            .observeValues { [weak self] message in
+        setupOutputs()
+        self.vm.inputs.viewDidLoad()
+    }
+}
 
-                guard let signUpMessage = LoginViewModel.SignUpResponseType(rawValue: message) else {
+extension LoginViewController {
+
+    fileprivate func setupOutputs() {
+        self.vm.outputs.alertResponse
+            .observe(on: UIScheduler())
+            .observeValues { [weak self] response in
+
+                guard let signUpResponse = LoginViewModel.SignUpResponseType(rawValue: response) else {
                     return
                 }
 
-                switch signUpMessage {
+                switch signUpResponse {
                 case .successful:
                     self?.router.route(to: Route.showContent.rawValue, from: self)
                 default:
-                    let alert = UIAlertController(title: nil,
-                                                  message: message,
-                                                  preferredStyle: .alert)
-                    alert.addAction(.init(title: "OK", style: .default, handler: nil))
+                    let alert = AlertCreator.createSimpleAlert(title: nil, message: response)
                     self?.present(alert, animated: true, completion: nil)
                 }
         }
@@ -66,8 +70,15 @@ extension LoginViewController {
         self.vm.outputs.submitButtonEnabled
             .observe(on: UIScheduler())
             .observeValues { [weak self] enabled in self?.submitButton.isEnabled = enabled }
-        
-        self.vm.inputs.viewDidLoad()
     }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+
 }
 

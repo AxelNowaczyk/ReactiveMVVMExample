@@ -14,24 +14,27 @@ enum ContentProviderResponse {
     case failure(Error)
 }
 
-struct ContentProvider {
+struct ContentProviderError: Error {
+    var localizedDescription: String
+    var code: Int
+}
 
-    static private var counter = 0
+typealias ContentProviderFunction = () -> ContentProviderResponse
+protocol ContentProvidable {
+    var function: ContentProviderFunction { get }
+}
+
+struct ContentProvider: ContentProvidable {
+
+    var function: ContentProviderFunction
+
+    init(function: @escaping ContentProviderFunction) {
+        self.function = function
+    }
 
     typealias CompletionHandler = (ContentProviderResponse) -> Void
-    static func performContentRequest(completionHandler: CompletionHandler) {
-
-        defer {
-            counter += 1
-            counter %= 4
-        }
-
-        switch counter {
-        case 0: completionHandler(.success([ContentModel(title: "1"),ContentModel(title: "2"),ContentModel(title: "3")]))
-        case 1: completionHandler(.success([ContentModel(title: "11"),ContentModel(title: "22"),ContentModel(title: "33")]))
-        case 2: completionHandler(.success([ContentModel(title: "12"),ContentModel(title: "23"),ContentModel(title: "34")]))
-        default: completionHandler(.success([ContentModel(title: "A"),ContentModel(title: "B"),ContentModel(title: "C")]))
-        }
+    func performContentRequest(completionHandler: CompletionHandler) {
+        completionHandler(self.function())
     }
 
 }

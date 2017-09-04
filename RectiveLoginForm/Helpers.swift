@@ -49,3 +49,13 @@ fileprivate extension String {
 protocol Router {
     func route(to routeID: String, from context: UIViewController?)
 }
+
+struct AlertCreator {
+    static func createSimpleAlert(title: String?, message: String?) -> UIAlertController {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(.init(title: "OK", style: .default, handler: nil))
+        return alert
+    }
+}

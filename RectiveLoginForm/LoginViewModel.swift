@@ -18,7 +18,7 @@ protocol LoginViewModelInputs {
 }
 
 protocol LoginViewModelOutputs {
-    var alertMessage: Signal<String, NoError> { get }
+    var alertResponse: Signal<String, NoError> { get }
     var submitButtonEnabled: Signal<Bool, NoError> { get }
 }
 
@@ -29,7 +29,7 @@ protocol LoginViewModelType {
 
 struct LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelOutputs {
 
-    let alertMessage: Signal<String, NoError>
+    let alertResponse: Signal<String, NoError>
     let submitButtonEnabled: Signal<Bool, NoError>
 
     var inputs: LoginViewModelInputs { return self }
@@ -91,7 +91,7 @@ struct LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelO
             .skip(first: 2)
             .map { _ in SignUpResponseType.tooManyAttempts.rawValue }
 
-        self.alertMessage = Signal.merge(
+        self.alertResponse = Signal.merge(
             successfulSignupMessage,
             unsuccessfulSignupMessage,
             tooManyAttemptsMessage
@@ -101,7 +101,7 @@ struct LoginViewModel: LoginViewModelType, LoginViewModelInputs, LoginViewModelO
             self.viewDidLoadProperty.signal.map { _ in false },
             formData.map(Crudentials.isPresent(email:name:password:)),
             tooManyAttemptsMessage.map { _ in false }
-            )
-            .take(until: tooManyAttemptsMessage.map { _ in () } )
+        )
+        .take(until: tooManyAttemptsMessage.map { _ in () })
     }
 }
