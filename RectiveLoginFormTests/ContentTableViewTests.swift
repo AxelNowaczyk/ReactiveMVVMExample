@@ -10,32 +10,60 @@ import XCTest
 import Result
 @testable import RectiveLoginForm
 
-class ContentTableViewTests: XCTestCase {
+class ContentTableViewOkTests: XCTestCase {
 
-    let vm: ContentTableViewModelType = ContentTableViewModel()
-    let receivedData = TestObserver<Bool, NoError>()
+    let vm = ContentTableViewModel(cp: ContentProvider(function: { () -> ContentProviderResponse in
+        return .success([ContentModel(title: "12"),ContentModel(title: "23"),ContentModel(title: "34"),ContentModel(title: "45")])
+    }))
+
+    let receivedData = TestObserver<String?, NoError>()
 
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        self.vm.outputs.receivedData.observe(self.receivedData.observer)
+    }
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+
+    func testContent() {
+        self.vm.inputs.viewDidLoad()
+
+        self.receivedData.assertValues([nil])
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+
+    func testContentShouldReloadData() {
+        self.vm.inputs.viewDidLoad()
+
+        self.vm.inputs.shouldReloadData()
+        self.receivedData.assertValues([nil, nil])
     }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+}
+
+class ContentTableViewFailureTests: XCTestCase {
+
+    let vm = ContentTableViewModel(cp: ContentProvider(function: { () -> ContentProviderResponse in
+        return .failure(ContentProviderError.default)
+    }))
+
+    let receivedData = TestObserver<String?, NoError>()
+
+    override func setUp() {
+        super.setUp()
+        self.vm.outputs.receivedData.observe(self.receivedData.observer)
+    }
+
+
+    func testContent() {
+        self.vm.inputs.viewDidLoad()
+
+        self.receivedData.assertValues([nil])
+    }
+
+    func testContentShouldReloadData() {
+        self.vm.inputs.viewDidLoad()
+
+        self.vm.inputs.shouldReloadData()
+        self.receivedData.assertValues([nil, "ContentProviderError"])
     }
     
 }

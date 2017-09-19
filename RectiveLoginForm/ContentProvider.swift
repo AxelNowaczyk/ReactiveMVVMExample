@@ -11,12 +11,16 @@ import Result
 
 enum ContentProviderResponse {
     case success([ContentModel])
-    case failure(Error)
+    case failure(ContentProviderError)
 }
 
 struct ContentProviderError: Error {
     var localizedDescription: String
     var code: Int
+
+    static var `default`: ContentProviderError {
+        return ContentProviderError(localizedDescription: "ContentProviderError", code: 10001)
+    }
 }
 
 typealias ContentProviderFunction = () -> ContentProviderResponse

@@ -25,7 +25,7 @@ class ContentTableViewController: UITableViewController {
         case 0: return .success([ContentModel(title: "1"),ContentModel(title: "2"),ContentModel(title: "3")])
         case 1: return .success([ContentModel(title: "A"),ContentModel(title: "B"),ContentModel(title: "C")])
         case 2: return .success([ContentModel(title: "12"),ContentModel(title: "23"),ContentModel(title: "34"),ContentModel(title: "45")])
-        default: return .failure(ContentProviderError(localizedDescription: "ContentProviderError Occured", code: 10001))
+        default: return .failure(ContentProviderError.default)
         }
     }))
 
